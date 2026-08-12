@@ -1,0 +1,49 @@
+[
+  {
+    "date": "2026-08-13",
+    "macrostructure": "Narrative Workflow",
+    "theme": "custom",
+    "theme_axes": "dark / geometric-sans / neutral",
+    "vibe": "Dot.DEV craft studio, Trilolabs ash",
+    "enrichment": "cursor-reactive dot mesh",
+    "nav": "N9",
+    "footer": "Ft8",
+    "brief": "1:1 Dot.DEV structure · colors only → ash",
+    "studied": "https://dotdevstudio.framer.website/"
+  },
+  {
+    "date": "2026-08-13",
+    "macrostructure": "Narrative Workflow",
+    "theme": "custom",
+    "theme_axes": "light / geometric-sans / neutral",
+    "vibe": "craft studio, vibhuti ash, clear sight",
+    "enrichment": "tripundra + Dot.DEV DNA",
+    "nav": "N7",
+    "footer": "Ft1",
+    "brief": "Trilolabs · Dot.DEV section rhythm in ash light",
+    "studied": "https://dotdevstudio.framer.website/"
+  },
+  {
+    "date": "2026-08-13",
+    "macrostructure": "Bento Grid",
+    "theme": "custom",
+    "theme_axes": "light / geometric-sans / neutral",
+    "vibe": "divine precision, light industrial, vibhuti ash",
+    "enrichment": "tripundra + dot-grid",
+    "nav": "N7",
+    "footer": "Ft1",
+    "brief": "Trilolabs · Stitch Divine Precision light invert",
+    "studied": "stitch"
+  },
+  {
+    "date": "2026-08-13",
+    "macrostructure": "Marquee Hero",
+    "theme": "custom",
+    "theme_axes": "light / roman-serif / neutral",
+    "vibe": "vibhuti ash, austere stillness, clear sight",
+    "enrichment": "tripundra Tier A",
+    "nav": "N9",
+    "footer": "Ft2",
+    "brief": "Trilolabs · Shiva-inspired grey black white"
+  }
+]

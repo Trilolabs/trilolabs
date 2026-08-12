@@ -1,77 +1,153 @@
-import fs from "fs";
-import path from "path";
+import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import Chrome from "./components/Chrome";
+import Experience from "./components/Experience";
+import "./globals.css";
 
-function getHeadHtml() {
-  try {
-    const filePath = path.join(process.cwd(), "index.html");
-    const html = fs.readFileSync(filePath, "utf8");
+const space = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space",
+  display: "swap",
+});
 
-    const partsAfterHead = html.split("<head>");
-    if (partsAfterHead.length < 2) return { head: "", modulepreloads: "" };
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
-    const headInner = partsAfterHead[1].split("</head>")[0] || "";
+const siteUrl = "https://trilolabs.com";
+const logoUrl = `${siteUrl}/brand/trilolabs-logo.png`;
 
-    // Extract modulepreload links from body (they should be in head)
-    const bodyParts = html.split("<body");
-    let modulepreloads = "";
-    if (bodyParts.length >= 2) {
-      const bodyAfterOpen = bodyParts[1].split(">").slice(1).join(">");
-      const bodyInner = bodyAfterOpen.split("</body>")[0] || "";
-      const modulepreloadRegex = /<link\s+rel="modulepreload"[\s\S]*?>/gi;
-      const matches = bodyInner.match(modulepreloadRegex) || [];
-      modulepreloads = matches.join("\n");
-    }
+export const metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Trilolabs — SaaS & AI studio",
+    template: "%s · Trilolabs",
+  },
+  description:
+    "Trilolabs Technologies LLP builds SaaS products and AI/ML systems for founders and CTOs — from discovery to production. Write to info@trilolabs.com.",
+  applicationName: "Trilolabs",
+  authors: [{ name: "Trilolabs Technologies LLP", url: siteUrl }],
+  creator: "Trilolabs Technologies LLP",
+  publisher: "Trilolabs Technologies LLP",
+  keywords: [
+    "Trilolabs",
+    "SaaS development",
+    "AI systems",
+    "machine learning",
+    "product engineering",
+    "technical consulting",
+    "software studio",
+  ],
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Trilolabs",
+    title: "Trilolabs — We build the product and land the model",
+    description:
+      "SaaS product building and AI/ML systems for founders and CTOs. One team for the application, the data path, and the handoff.",
+    images: [
+      {
+        url: "/brand/trilolabs-logo.png",
+        width: 1536,
+        height: 1024,
+        alt: "Trilolabs logo",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trilolabs — We build the product and land the model",
+    description:
+      "SaaS product building and AI/ML systems for founders and CTOs. Contact info@trilolabs.com.",
+    images: [
+      {
+        url: "/brand/trilolabs-logo.png",
+        alt: "Trilolabs logo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/brand/favicon.svg", type: "image/svg+xml" },
+      { url: "/brand/trilolabs-logo.png", type: "image/png", sizes: "1536x1024" },
+    ],
+    shortcut: "/brand/favicon.svg",
+    apple: [{ url: "/brand/trilolabs-logo.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/brand/mark.svg",
+        color: "#0a0a0b",
+      },
+    ],
+  },
+  other: {
+    "contact:email": "info@trilolabs.com",
+  },
+};
 
-    // Strip out any inline <script> tags from the original head.
-    const withoutScripts = headInner.replace(/<script[\s\S]*?<\/script>/gi, "");
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0b" },
+    { media: "(prefers-color-scheme: light)", color: "#0a0a0b" },
+  ],
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
-    return {
-      head: withoutScripts.trim(),
-      modulepreloads,
-    };
-  } catch (error) {
-    console.error("Failed to read head from index.html:", error);
-    return { head: "", modulepreloads: "" };
-  }
-}
-
-const { head: HEAD_HTML, modulepreloads } = getHeadHtml();
-
-// Custom overrides on top of the original Framer head.
-// - Hide the small "Waitlister Framer Template" badge chip
-// - Hide the Framer footer ("Use This Template • Proudly Built In Framer • Created by ...")
-const CUSTOM_HEAD_CSS = `<style>
-  /* Badge chip */
-  .framer-g6dd5 {
-    display: none !important;
-  }
-
-  /* Footer variants injected by Framer runtime */
-  [name="Footer"],
-  [data-framer-name="Footer"] {
-    display: none !important;
-  }
-</style>`;
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Trilolabs Technologies LLP",
+  url: siteUrl,
+  logo: logoUrl,
+  image: logoUrl,
+  email: "info@trilolabs.com",
+  description:
+    "SaaS product building and AI/ML systems for founders and CTOs.",
+  sameAs: [],
+};
 
 export default function RootLayout({ children }) {
-  // Combine head content with modulepreload links
-  const fullHeadContent =
-    HEAD_HTML +
-    (modulepreloads ? "\n" + modulepreloads : "") +
-    "\n" +
-    CUSTOM_HEAD_CSS;
-  
   return (
-    <html lang="en">
-      <head dangerouslySetInnerHTML={{ __html: fullHeadContent }} />
+    <html lang="en" className={`${space.variable} ${plexMono.variable}`}>
+      <head>
+        <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/brand/trilolabs-logo.png" />
+        <meta property="og:logo" content={logoUrl} />
+        <meta name="logo" content={logoUrl} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+      </head>
       <body>
-        {/* 
-          Framer scripts will handle animations, so we don't need
-          the CSS override anymore. The scripts are loaded in page.js.
-        */}
-        {children}
+        <Experience />
+        <Chrome>{children}</Chrome>
       </body>
     </html>
   );
 }
-
