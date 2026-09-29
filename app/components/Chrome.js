@@ -3,14 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Logo from "./Logo";
-
-const MAIL = "mailto:info@trilolabs.com?subject=Trilolabs%20enquiry";
-
-const LINKS = [
-  { href: "#work", label: "Work" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
-];
+import { BOOK, NAV } from "../content";
 
 export default function Chrome({ children }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -18,7 +11,7 @@ export default function Chrome({ children }) {
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 24);
+      setScrolled(window.scrollY > 16);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -39,8 +32,10 @@ export default function Chrome({ children }) {
     };
   }, [mobileOpen]);
 
-  function go(href) {
+  function handleNavClick(e, href) {
     setMobileOpen(false);
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -53,12 +48,29 @@ export default function Chrome({ children }) {
 
       <header className={`nav${scrolled ? " is-scrolled" : ""}`}>
         <div className="nav__inner">
-          <a className="nav__brand" href="#top" aria-label="Trilolabs home">
+          <nav className="nav__links" aria-label="Primary">
+            {NAV.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <a className="nav__brand" href="/" aria-label="Trilolabs home">
             <Logo />
           </a>
+
+          <a className="nav__cta btn btn--pill" href={BOOK}>
+            Book a free call
+          </a>
+
           <button
             type="button"
-            className={`nav__menu${mobileOpen ? " is-open" : ""}`}
+            className="nav__menu"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
@@ -79,7 +91,7 @@ export default function Chrome({ children }) {
         <div className="mobile-sheet__top">
           <a
             className="nav__brand"
-            href="#top"
+            href="/"
             aria-label="Trilolabs home"
             onClick={() => setMobileOpen(false)}
           >
@@ -93,24 +105,23 @@ export default function Chrome({ children }) {
             Close
           </button>
         </div>
-
         <nav className="mobile-sheet__nav" aria-label="Mobile">
-          {LINKS.map((link) => (
+          {NAV.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                go(link.href);
-              }}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </a>
           ))}
         </nav>
-
-        <a className="mobile-sheet__cta" href={MAIL}>
-          info@trilolabs.com →
+        <a
+          className="btn btn--pill"
+          href={BOOK}
+          onClick={() => setMobileOpen(false)}
+        >
+          Book a free call
         </a>
       </div>
     </>

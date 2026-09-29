@@ -1,116 +1,70 @@
-import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Chrome from "./components/Chrome";
 import Experience from "./components/Experience";
+import { COMPANY } from "./content";
 import "./globals.css";
 
-const space = Space_Grotesk({
+const sans = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-plex-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
   display: "swap",
 });
 
 const siteUrl = "https://trilolabs.com";
-const logoUrl = `${siteUrl}/brand/trilolabs-logo.png`;
+const logoUrl = `${siteUrl}/brand/logo.svg`;
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Trilolabs — SaaS & AI studio",
+    default: "Trilolabs — AI Automation Studio",
     template: "%s · Trilolabs",
   },
   description:
-    "Trilolabs Technologies LLP builds SaaS products and AI/ML systems for founders and CTOs — from discovery to production. Write to info@trilolabs.com.",
+    "We sense where AI fits in your business, uncover the gaps costing you time, and build systems that work — without the guesswork.",
   applicationName: "Trilolabs",
-  authors: [{ name: "Trilolabs Technologies LLP", url: siteUrl }],
-  creator: "Trilolabs Technologies LLP",
-  publisher: "Trilolabs Technologies LLP",
+  authors: [{ name: COMPANY.legalName, url: siteUrl }],
+  creator: COMPANY.legalName,
+  publisher: COMPANY.legalName,
   keywords: [
     "Trilolabs",
+    "AI automation",
     "SaaS development",
-    "AI systems",
-    "machine learning",
     "product engineering",
-    "technical consulting",
-    "software studio",
   ],
-  category: "technology",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
     siteName: "Trilolabs",
-    title: "Trilolabs — We build the product and land the model",
+    title: "Trilolabs — AI Automation Studio",
     description:
-      "SaaS product building and AI/ML systems for founders and CTOs. One team for the application, the data path, and the handoff.",
+      "We sense where AI fits in your business and build systems that work — without the guesswork.",
     images: [
       {
-        url: "/brand/trilolabs-logo.png",
-        width: 1536,
-        height: 1024,
+        url: "/brand/og-share.png",
+        width: 1200,
+        height: 630,
         alt: "Trilolabs logo",
-        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trilolabs — We build the product and land the model",
+    title: "Trilolabs — AI Automation Studio",
     description:
-      "SaaS product building and AI/ML systems for founders and CTOs. Contact info@trilolabs.com.",
-    images: [
-      {
-        url: "/brand/trilolabs-logo.png",
-        alt: "Trilolabs logo",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
+      "AI automation and product systems for teams that need measurable results.",
+    images: [{ url: "/brand/og-share.png", alt: "Trilolabs logo" }],
   },
   icons: {
-    icon: [
-      { url: "/brand/favicon.svg", type: "image/svg+xml" },
-      { url: "/brand/trilolabs-logo.png", type: "image/png", sizes: "1536x1024" },
-    ],
-    shortcut: "/brand/favicon.svg",
-    apple: [{ url: "/brand/trilolabs-logo.png", sizes: "180x180", type: "image/png" }],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/brand/mark.svg",
-        color: "#0a0a0b",
-      },
-    ],
-  },
-  other: {
-    "contact:email": "info@trilolabs.com",
+    icon: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/brand/favicon.svg", type: "image/svg+xml" }],
   },
 };
 
 export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0b" },
-    { media: "(prefers-color-scheme: light)", color: "#0a0a0b" },
-  ],
+  themeColor: "#060606",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -119,24 +73,26 @@ export const viewport = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Trilolabs Technologies LLP",
+  name: COMPANY.legalName,
+  legalName: COMPANY.legalName,
   url: siteUrl,
   logo: logoUrl,
-  image: logoUrl,
   email: "info@trilolabs.com",
-  description:
-    "SaaS product building and AI/ML systems for founders and CTOs.",
-  sameAs: [],
+  description: "AI automation and SaaS product studio.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1-90/2/H PNO.93, Madhapur",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500081",
+    addressCountry: "IN",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${space.variable} ${plexMono.variable}`}>
+    <html lang="en" className={sans.variable}>
       <head>
-        <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/brand/trilolabs-logo.png" />
-        <meta property="og:logo" content={logoUrl} />
-        <meta name="logo" content={logoUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
