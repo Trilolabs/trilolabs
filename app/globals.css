@@ -361,13 +361,22 @@ ol {
   pointer-events: none;
 }
 
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .hero__media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 62%;
-  filter: var(--filter-media-brand);
 }
 
 .hero__veil {
@@ -620,6 +629,17 @@ ol {
   background: #0a1420;
 }
 
+.about__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
 .about__panel > img {
   display: block;
   width: 100%;
@@ -627,7 +647,6 @@ ol {
   min-height: clamp(18rem, 42vw, 28rem);
   object-fit: cover;
   object-position: center;
-  filter: var(--filter-media-brand-panel);
 }
 
 .about__panel-stat {
@@ -893,10 +912,22 @@ ol {
 }
 
 .service-acc__media {
+  position: relative;
   overflow: clip;
   border-radius: 1.5rem;
   background: #0b1524;
   aspect-ratio: 16 / 10;
+}
+
+.service-acc__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .service-acc__media img {
@@ -1061,6 +1092,17 @@ ol {
   inset: 0;
   z-index: 0;
   overflow: clip;
+}
+
+.case-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .case-card__media img {
@@ -1457,13 +1499,22 @@ ol {
   pointer-events: none;
 }
 
+.page-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .page-hero__media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 70%;
-  filter: var(--filter-media-brand);
   opacity: 0.95;
 }
 
@@ -1702,12 +1753,24 @@ ol {
 }
 
 .case-detail-hero__media {
+  position: relative;
   margin-top: 2.5rem;
   overflow: clip;
   border-radius: 1.5rem;
   border: 1px solid var(--color-line);
   min-height: 18rem;
   background: #0b1524;
+}
+
+.case-detail-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-accent);
+  mix-blend-mode: color;
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .case-detail-hero__media img {

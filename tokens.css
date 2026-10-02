@@ -37,10 +37,4 @@
 
   --z-sticky: 200;
   --z-modal: 400;
-
-  /* Cobalt cast on green-tinted photography */
-  --filter-media-brand: hue-rotate(128deg) saturate(1.35) brightness(0.92)
-    contrast(1.05);
-  --filter-media-brand-panel: hue-rotate(125deg) saturate(1.4) brightness(0.9)
-    contrast(1.05);
 }
