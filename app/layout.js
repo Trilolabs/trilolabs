@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Chrome from "./components/Chrome";
 import Experience from "./components/Experience";
 import { COMPANY } from "./content";
@@ -5,6 +6,7 @@ import "./globals.css";
 
 const siteUrl = "https://trilolabs.com";
 const logoUrl = `${siteUrl}/brand/logo.svg`;
+const GA_MEASUREMENT_ID = "G-XXCWS4289R";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -103,6 +105,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <Experience />
         <Chrome>{children}</Chrome>
       </body>

@@ -31,6 +31,18 @@ export default async function CaseStudyPage({ params }) {
         </p>
         <h1 className="case-detail-hero__title">{item.name}</h1>
         <p className="case-detail-hero__summary">{item.summary}</p>
+        {item.externalUrl ? (
+          <p className="case-detail-hero__link">
+            <a
+              href={item.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit {item.name}
+              <span aria-hidden="true"> →</span>
+            </a>
+          </p>
+        ) : null}
         <p className="case-detail-hero__metric">
           <span className="case-detail-hero__metric-value">{item.metric}</span>
           <span className="case-detail-hero__metric-label">

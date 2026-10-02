@@ -1,7 +1,8 @@
 import BookCallForm from "../components/BookCallForm";
+import BrandMarquee from "../components/BrandMarquee";
 import PageEnd from "../components/PageEnd";
 import PageHero from "../components/PageHero";
-import { BOOK_CALL, TRUST } from "../content";
+import { BOOK_CALL } from "../content";
 
 export const metadata = {
   title: "Book a call",
@@ -20,27 +21,7 @@ export default function BookACallPage() {
 
       <section className="book wrap" aria-label="Book a call form">
         <BookCallForm />
-
-        <div className="book__brands">
-          <p className="book__brands-label">{TRUST.label}</p>
-          <ul className="book__brands-list">
-            {TRUST.brands.map((brand) => (
-              <li key={brand.name}>
-                {brand.src ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    className="hero__brand-logo"
-                    src={brand.src}
-                    alt={brand.name}
-                    height={28}
-                  />
-                ) : (
-                  <span className="hero__brand-mark">{brand.name}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <BrandMarquee className="book__brands" />
       </section>
 
       <PageEnd />

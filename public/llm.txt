@@ -1,0 +1,38 @@
+# Trilolabs
+
+> AI automation and SaaS product studio. We find where AI fits in your business, close the gaps costing you time, and ship systems teams actually use.
+
+Trilolabs Technologies LLP is based in Madhapur, Hyderabad, India. We design, build, and operate custom AI automation — from document intelligence and agentic BFSI products to full product engineering.
+
+Contact: info@trilolabs.com
+Book a demo: https://trilolabs.com/book-a-call
+Legal name: TRILOLABS TECHNOLOGIES LLP
+Address: 1-90/2/H PNO.93, Madhapur, Hyderabad-500081, Telangana, India (as issued by the Income Tax Department)
+
+## Site
+
+- [Home](https://trilolabs.com/): Hero, services, process, case studies, FAQ, and contact CTA
+- [About us](https://trilolabs.com/about-us): Who we are and delivery metrics
+- [Case studies](https://trilolabs.com/case-studies): Selected client and product work
+- [Blog](https://trilolabs.com/blog): Guides and articles on practical AI automation
+- [Book a call](https://trilolabs.com/book-a-call): Demo / enquiry form
+
+## Case studies
+
+- [Humana](https://trilolabs.com/case-studies/humana): Vision-language models for entity recognition in fax and clinical document digitization. Client site: https://www.humana.com/
+- [Neurasix](https://trilolabs.com/case-studies/neurasix): End-to-end AI and product ownership for Neurasix — agentic BFSI finance and compliance workflows. Product: https://neurasix.ai/
+- [Outroom](https://trilolabs.com/case-studies/outroom): Trilolabs subproduct — event ticketing and management (publish, sell, check-in, branded pages). Product: https://outroom.in/
+
+## Services
+
+- Analyze: Workflow audit, data mapping, automation opportunity discovery
+- Build: Custom systems, integrations, and product engineering
+- Launch: Testing, careful rollout, monitoring
+- Optimize: Performance, training, ongoing refinement
+
+## Optional
+
+- [Sitemap](https://trilolabs.com/sitemap.xml): Machine-readable index of public URLs
+- [Robots](https://trilolabs.com/robots.txt): Crawler rules
+- [Brand mark](https://trilolabs.com/brand/favicon.svg): Favicon / tripundra mark
+- [llms.txt](https://trilolabs.com/llms.txt): Canonical copy of this file (llmstxt.org)

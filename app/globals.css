@@ -448,15 +448,54 @@ ol {
   font-size: 0.8125rem;
 }
 
-.hero__brands-strip {
-  display: block;
-  margin: 0 auto;
-  width: min(100%, 42rem);
-  height: auto;
-  max-height: 3.5rem;
-  object-fit: contain;
-  opacity: 0.78;
-  filter: invert(1) brightness(0.95);
+.hero__brands-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.hero__brands-marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee 28s linear infinite;
+}
+
+.hero__brands-marquee:hover .hero__brands-marquee-inner {
+  animation-play-state: paused;
+}
+
+.hero__brands-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 3.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 3.25rem 0.35rem 0;
+}
+
+.hero__brands-track a {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.82;
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+
+.hero__brands-track a:hover {
+  opacity: 1;
 }
 
 .hero__brands-list {
@@ -480,11 +519,53 @@ ol {
 
 .hero__brand-logo {
   display: block;
-  height: 1.75rem;
+  height: 1.85rem;
   width: auto;
+  max-width: 9.5rem;
   object-fit: contain;
-  /* Partner logos on dark — lift to soft white */
-  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__brands-marquee-inner {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__brands-marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .hero__brands-track[aria-hidden="true"] {
+    display: none;
+  }
+
+  .hero__brands-track {
+    padding-right: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+  }
+}
+
+.hero__brands-strip {
+  display: block;
+  margin: 0 auto;
+  width: min(100%, 42rem);
+  height: auto;
+  max-height: 3.5rem;
+  object-fit: contain;
   opacity: 0.78;
 }
 
@@ -1585,6 +1666,20 @@ ol {
   max-width: 40rem;
   color: var(--color-ink-muted);
   font-size: 1.1rem;
+}
+
+.case-detail-hero__link {
+  margin: 1rem 0 0;
+}
+
+.case-detail-hero__link a {
+  color: var(--color-accent-bright);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.case-detail-hero__link a:hover {
+  color: var(--color-ink);
 }
 
 .case-detail-hero__metric {

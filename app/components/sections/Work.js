@@ -2,7 +2,7 @@ import StatCounter from "../StatCounter";
 import SectionBadgeMark from "../SectionBadgeMark";
 import { WORK } from "../../content";
 
-const homepageCases = WORK.cases.slice(0, 4);
+const homepageCases = WORK.cases;
 const totalBadge = String(WORK.cases.length).padStart(2, "0");
 
 export default function Work({

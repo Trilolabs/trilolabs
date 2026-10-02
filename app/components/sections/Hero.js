@@ -1,4 +1,5 @@
-import { HERO, TRUST } from "../../content";
+import BrandMarquee from "../BrandMarquee";
+import { HERO } from "../../content";
 
 export default function Hero() {
   return (
@@ -26,26 +27,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero__brands">
-        <p className="hero__brands-label">{TRUST.label}</p>
-        <ul className="hero__brands-list">
-          {TRUST.brands.map((brand) => (
-            <li key={brand.name}>
-              {brand.src ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className="hero__brand-logo"
-                  src={brand.src}
-                  alt={brand.name}
-                  height={28}
-                />
-              ) : (
-                <span className="hero__brand-mark">{brand.name}</span>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <BrandMarquee />
     </section>
   );
 }
