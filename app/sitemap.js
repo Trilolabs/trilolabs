@@ -1,6 +1,5 @@
 import { BLOG, WORK } from "./content";
-
-const siteUrl = "https://trilolabs.com";
+import { SITE_URL } from "./site";
 
 export default function sitemap() {
   const lastModified = new Date();
@@ -12,21 +11,21 @@ export default function sitemap() {
     "/blog",
     "/book-a-call",
   ].map((path) => ({
-    url: `${siteUrl}${path}`,
+    url: `${SITE_URL}${path || "/"}`,
     lastModified,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : 0.8,
   }));
 
   const caseRoutes = WORK.cases.map((item) => ({
-    url: `${siteUrl}/case-studies/${item.slug}`,
+    url: `${SITE_URL}/case-studies/${item.slug}`,
     lastModified,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const blogRoutes = BLOG.posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
+    url: `${SITE_URL}/blog/${post.slug}`,
     lastModified,
     changeFrequency: "monthly",
     priority: 0.6,

@@ -15,6 +15,12 @@ export async function generateMetadata({ params }) {
   return {
     title: `${item.name} Case Study`,
     description: item.summary,
+    alternates: { canonical: `/case-studies/${item.slug}` },
+    openGraph: {
+      title: `${item.name} Case Study`,
+      description: item.summary,
+      url: `/case-studies/${item.slug}`,
+    },
   };
 }
 
@@ -52,7 +58,15 @@ export default async function CaseStudyPage({ params }) {
         {item.image ? (
           <div className="case-detail-hero__media" aria-hidden="true">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image} alt="" />
+            <img
+              src={item.image}
+              alt=""
+              width={1200}
+              height={800}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
           </div>
         ) : null}
       </section>

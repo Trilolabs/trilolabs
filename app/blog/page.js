@@ -5,6 +5,7 @@ import { BLOG } from "../content";
 export const metadata = {
   title: "News & Insights",
   description: BLOG.support,
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

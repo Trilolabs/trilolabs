@@ -361,16 +361,6 @@ ol {
   pointer-events: none;
 }
 
-.hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.72;
-  pointer-events: none;
-}
-
 .hero__media img {
   display: block;
   width: 100%;
@@ -387,10 +377,10 @@ ol {
   background: linear-gradient(
     180deg,
     rgba(6, 6, 6, 0.55) 0%,
-    rgba(6, 6, 6, 0.2) 28%,
-    rgba(6, 6, 6, 0.05) 48%,
-    rgba(6, 6, 6, 0.35) 78%,
-    rgba(6, 6, 6, 0.92) 100%
+    rgba(6, 6, 6, 0.22) 28%,
+    rgba(6, 6, 6, 0.08) 48%,
+    rgba(6, 6, 6, 0.4) 78%,
+    rgba(6, 6, 6, 0.94) 100%
   );
 }
 
@@ -627,17 +617,6 @@ ol {
   border: 1px solid var(--color-line);
   min-height: clamp(18rem, 42vw, 28rem);
   background: #0a1420;
-}
-
-.about__panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.55;
-  pointer-events: none;
 }
 
 .about__panel > img {
@@ -919,17 +898,6 @@ ol {
   aspect-ratio: 16 / 10;
 }
 
-.service-acc__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 .service-acc__media img {
   display: block;
   width: 100%;
@@ -1092,17 +1060,6 @@ ol {
   inset: 0;
   z-index: 0;
   overflow: clip;
-}
-
-.case-card__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.45;
-  pointer-events: none;
 }
 
 .case-card__media img {
@@ -1499,16 +1456,6 @@ ol {
   pointer-events: none;
 }
 
-.page-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.72;
-  pointer-events: none;
-}
-
 .page-hero__media img {
   display: block;
   width: 100%;
@@ -1760,17 +1707,6 @@ ol {
   border: 1px solid var(--color-line);
   min-height: 18rem;
   background: #0b1524;
-}
-
-.case-detail-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: var(--color-accent);
-  mix-blend-mode: color;
-  opacity: 0.45;
-  pointer-events: none;
 }
 
 .case-detail-hero__media img {

@@ -10,19 +10,27 @@ function BrandMark({ brand }) {
         className="hero__brand-logo"
         src={brand.src}
         alt={brand.name}
+        width={112}
         height={28}
+        decoding="async"
+        loading="lazy"
       />
     );
   }
   return <span className="hero__brand-mark">{brand.name}</span>;
 }
 
-function BrandItem({ brand }) {
+function BrandItem({ brand, inertLinks = false }) {
   const mark = <BrandMark brand={brand} />;
   if (!brand.href) return <li>{mark}</li>;
   return (
     <li>
-      <a href={brand.href} target="_blank" rel="noopener noreferrer">
+      <a
+        href={brand.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={inertLinks ? -1 : undefined}
+      >
         {mark}
       </a>
     </li>
@@ -34,13 +42,22 @@ function BrandTrack({ brands, ariaHidden = false }) {
   // With only a few brands, repeat so the strip feels continuous.
   const loop = [...brands, ...brands];
   return (
-    <ul className="hero__brands-track" aria-hidden={ariaHidden || undefined}>
-      {loop.map((brand, i) => (
-        <BrandItem
-          key={`${brand.name}-${ariaHidden ? "b" : "a"}-${i}`}
-          brand={brand}
-        />
-      ))}
+    <ul
+      className="hero__brands-track"
+      aria-hidden={ariaHidden || undefined}
+      inert={ariaHidden || undefined}
+    >
+      {loop.map((brand, i) => {
+        // First pass of the visible track stays focusable; duplicates are not.
+        const inertLinks = ariaHidden || i >= brands.length;
+        return (
+          <BrandItem
+            key={`${brand.name}-${ariaHidden ? "b" : "a"}-${i}`}
+            brand={brand}
+            inertLinks={inertLinks}
+          />
+        );
+      })}
     </ul>
   );
 }

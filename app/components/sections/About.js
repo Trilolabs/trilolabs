@@ -21,7 +21,14 @@ export default function About() {
 
         <div className="about__panel reveal">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={ABOUT.panel} alt="" />
+          <img
+            src={ABOUT.panel}
+            alt=""
+            width={1200}
+            height={800}
+            loading="lazy"
+            decoding="async"
+          />
           <div className="about__panel-stat">
             <p className="about__panel-value">
               <StatCounter

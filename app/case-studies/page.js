@@ -6,6 +6,7 @@ import { WORK } from "../content";
 export const metadata = {
   title: "Case Studies",
   description: WORK.title,
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {

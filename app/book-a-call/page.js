@@ -7,6 +7,7 @@ import { BOOK_CALL } from "../content";
 export const metadata = {
   title: "Book a call",
   description: BOOK_CALL.support,
+  alternates: { canonical: "/book-a-call" },
 };
 
 export default function BookACallPage() {

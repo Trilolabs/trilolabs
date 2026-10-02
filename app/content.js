@@ -52,7 +52,7 @@ export const ABOUT = {
   title: "Built to make AI work for you.",
   body: "We’re an agency that skips the complexity, focusing only on automation that delivers real, measurable results.",
   cta: { href: BOOK, label: "Book a Demo" },
-  panel: "/media/about-panel.png",
+  panel: "/media/about-panel.webp",
   panelStat: {
     value: 145,
     suffix: "+",
@@ -128,7 +128,7 @@ export const SERVICES = {
       tags: ["Workflow Audit", "Data Mapping", "Insights"],
       body: "We dig into your current workflows to identify exactly where AI automation will create the most measurable impact.",
       icon: "/media/services/service-icon-analyze.svg",
-      image: "/media/services/service-analyze.png",
+      image: "/media/services/service-analyze.webp",
     },
     {
       num: "02",
@@ -136,7 +136,7 @@ export const SERVICES = {
       tags: ["Custom Systems", "Integration", "Design"],
       body: "We design and construct custom automation systems tailored to how your team already works day to day.",
       icon: "/media/services/service-icon-build.svg",
-      image: "/media/services/service-build.jpg",
+      image: "/media/services/service-build.webp",
     },
     {
       num: "03",
@@ -144,7 +144,7 @@ export const SERVICES = {
       tags: ["Testing", "Rollout", "Monitoring"],
       body: "We roll out your systems carefully, testing every step to ensure nothing disrupts your daily business operations.",
       icon: "/media/services/service-icon-launch.svg",
-      image: "/media/services/service-launch.jpg",
+      image: "/media/services/service-launch.webp",
     },
     {
       num: "04",
@@ -152,7 +152,7 @@ export const SERVICES = {
       tags: ["Performance", "Training", "Refinement"],
       body: "We continuously refine your automation after launch, ensuring it keeps improving and delivering results as you grow.",
       icon: "/media/services/service-icon-optimize.svg",
-      image: "/media/services/service-optimize.png",
+      image: "/media/services/service-optimize.webp",
     },
   ],
 };
@@ -197,7 +197,7 @@ export const WORK = {
       body: "Vision-language models for entity recognition across faxed clinical documents — turning paper intake into structured, searchable data.",
       metric: "VLM",
       metricLabel: "Entity recognition",
-      image: "/media/cases/case-humana.png",
+      image: "/media/cases/case-humana.webp",
       href: "https://www.humana.com/",
     },
     {
@@ -207,7 +207,7 @@ export const WORK = {
       body: "We own the full AI stack and product for Neurasix — agentic BFSI workflows from regulatory intelligence to audit-ready outputs.",
       metric: "Full",
       metricLabel: "AI & product",
-      image: "/media/cases/case-neurasix.png",
+      image: "/media/cases/case-neurasix.webp",
       href: "https://neurasix.ai/",
     },
     {
@@ -217,7 +217,7 @@ export const WORK = {
       body: "Our event ticketing and management product — publish events, sell tickets, run check-in, and ship branded pages from one platform.",
       metric: "Trilolabs",
       metricLabel: "Subproduct",
-      image: "/media/cases/case-outroom.png",
+      image: "/media/cases/case-outroom.webp",
       href: "https://outroom.in/",
     },
   ],
@@ -232,7 +232,7 @@ export const CASES = {
       "Entity recognition with vision-language models for fax and document digitization — extracting structured fields from unstructured clinical paperwork.",
     metric: "VLM",
     metricLabel: "Entity recognition",
-    image: "/media/cases/case-humana.png",
+    image: "/media/cases/case-humana.webp",
     externalUrl: "https://www.humana.com/",
     challenge: {
       title:
@@ -270,7 +270,7 @@ export const CASES = {
       "Trilolabs builds and runs Neurasix end to end — the agentic AI product for BFSI finance and compliance teams.",
     metric: "Full stack",
     metricLabel: "AI & product",
-    image: "/media/cases/case-neurasix.png",
+    image: "/media/cases/case-neurasix.webp",
     externalUrl: "https://neurasix.ai/",
     challenge: {
       title:
@@ -308,7 +308,7 @@ export const CASES = {
       "Outroom is a Trilolabs subproduct — event ticketing and management from publish to door check-in.",
     metric: "Trilolabs",
     metricLabel: "Subproduct",
-    image: "/media/cases/case-outroom.png",
+    image: "/media/cases/case-outroom.webp",
     externalUrl: "https://outroom.in/",
     challenge: {
       title:

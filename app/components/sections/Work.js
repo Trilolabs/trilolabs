@@ -40,7 +40,14 @@ export default function Work({
               {item.image ? (
                 <div className="case-card__media" aria-hidden="true">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.image} alt="" />
+                  <img
+                    src={item.image}
+                    alt=""
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               ) : null}
               <div className="case-card__veil" aria-hidden="true" />

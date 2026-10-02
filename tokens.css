@@ -1,17 +1,25 @@
-/* Trilolabs design tokens */
+/* Trilolabs design tokens — Shiva blue · ash · white */
 :root {
+  /* Void / vibhuti ash */
   --color-bg: #060606;
-  --color-bg-elevated: #111111;
-  --color-bg-soft: #1a1a1a;
+  --color-bg-elevated: #0e1116;
+  --color-bg-soft: #161b24;
+  --color-ash: #c8c4ba;
+  --color-ash-bright: #f2f0e8;
+
+  /* Ink on ash-dark */
   --color-ink: #ffffff;
-  --color-ink-muted: rgba(255, 255, 255, 0.7);
-  --color-ink-faint: rgba(255, 255, 255, 0.45);
-  --color-line: rgba(255, 255, 255, 0.12);
+  --color-ink-muted: rgba(242, 240, 232, 0.72);
+  --color-ink-faint: rgba(200, 196, 186, 0.64);
+  --color-line: rgba(242, 240, 232, 0.12);
+
+  /* Shiva blue */
   --color-accent: #0047ab;
   --color-accent-bright: #3b7ddd;
-  --color-accent-soft: #1a3a6b;
-  --color-cta: #ffffff;
-  --color-cta-ink: #0a0a0a;
+  --color-accent-soft: #132a52;
+
+  --color-cta: #f2f0e8;
+  --color-cta-ink: #060606;
 
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-sans);

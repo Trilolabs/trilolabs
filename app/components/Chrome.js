@@ -87,6 +87,7 @@ export default function Chrome({ children }) {
         id="mobile-nav"
         className={`mobile-sheet${mobileOpen ? " is-open" : ""}`}
         aria-hidden={mobileOpen ? "false" : "true"}
+        inert={mobileOpen ? undefined : true}
       >
         <div className="mobile-sheet__top">
           <a

@@ -24,7 +24,16 @@ export default function PageHero({
       {showWave ? (
         <div className="page-hero__media" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/media/hero-wave.webp" alt="" />
+          <img
+            src="/media/hero-wave.webp"
+            srcSet="/media/hero-wave-sm.webp 960w, /media/hero-wave.webp 1600w"
+            sizes="100vw"
+            alt=""
+            width={1600}
+            height={1111}
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
       ) : null}
       <div className="page-hero__veil" aria-hidden="true" />

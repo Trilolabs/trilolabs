@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T16:52:04Z",
+  "title": "Design System: Trilolabs",
+  "extensions": {
+    "colorMeta": {
+      "void": {
+        "role": "neutral",
+        "displayName": "Void",
+        "canonical": "#060606",
+        "tonalRamp": ["#060606", "#0e1116", "#161b24", "#2a2f38", "#4a4f57", "#7a7e84", "#c8c4ba", "#f2f0e8"]
+      },
+      "void-elevated": {
+        "role": "neutral",
+        "displayName": "Void Elevated",
+        "canonical": "#0e1116",
+        "tonalRamp": ["#060606", "#0e1116", "#161b24", "#1e2430", "#2a3344", "#3d4a5c", "#6b7585", "#a8b0bc"]
+      },
+      "ash-bright": {
+        "role": "neutral",
+        "displayName": "Ash Bright",
+        "canonical": "#f2f0e8",
+        "tonalRamp": ["#3a3832", "#5c5950", "#8a867a", "#a8a498", "#c8c4ba", "#ddd9cf", "#f2f0e8", "#faf9f5"]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Vibhuti Ash",
+        "canonical": "#c8c4ba",
+        "tonalRamp": ["#2e2c28", "#4a4740", "#6e6a60", "#969187", "#c8c4ba", "#d9d5cc", "#ebe8e0", "#f7f5f0"]
+      },
+      "shiva-blue": {
+        "role": "primary",
+        "displayName": "Shiva Blue",
+        "canonical": "#0047ab",
+        "tonalRamp": ["#061428", "#0a2250", "#132a52", "#0047ab", "#1a5fc4", "#3b7ddd", "#6a9fe8", "#b3d0f5"]
+      },
+      "shiva-bright": {
+        "role": "primary",
+        "displayName": "Shiva Bright",
+        "canonical": "#3b7ddd",
+        "tonalRamp": ["#0a2250", "#132a52", "#0047ab", "#1a5fc4", "#3b7ddd", "#5c93e4", "#8bb4ed", "#c5daf6"]
+      },
+      "cta": {
+        "role": "neutral",
+        "displayName": "CTA Ash",
+        "canonical": "#f2f0e8",
+        "tonalRamp": ["#060606", "#3a3832", "#8a867a", "#c8c4ba", "#e8e8e8", "#f2f0e8", "#f7f5f0", "#ffffff"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#060606", "#4a4f57", "#7a7e84", "#a8a498", "#c8c4ba", "#e8e6e0", "#f2f0e8", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero / brand wordmarks only; must not outrank the Trilolabs mark."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles across marketing and product."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and panel titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Support copy and product UI text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, badges, meta."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default state and reveal easing."
+      },
+      {
+        "name": "dur-short",
+        "value": "220ms",
+        "purpose": "Hover, color, and micro-interactions."
+      },
+      {
+        "name": "dur-long",
+        "value": "480ms",
+        "purpose": "Panel open, reveal, marquee-adjacent transitions."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "48rem" },
+      { "name": "nav", "value": "52rem" },
+      { "name": "lg", "value": "56rem" },
+      { "name": "xl", "value": "72rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ash-bright pill CTA for the single primary action.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Book a Demo</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.625rem; padding: 0.75rem 1.15rem; border: 0; border-radius: 999px; background: #f2f0e8; color: #060606; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.8125rem; font-weight: 500; line-height: 1; cursor: pointer; transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #e8e8e8; } .ds-btn-primary:focus-visible { outline: 2px solid #3b7ddd; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary pill on void with hairline border.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">How we work <span class=\"ds-btn-ghost__arrow\">→</span></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.75rem; padding: 0.75rem 1.15rem; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #ffffff; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.8125rem; font-weight: 500; cursor: pointer; transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { background: rgba(255,255,255,0.14); } .ds-btn-ghost:focus-visible { outline: 2px solid #3b7ddd; outline-offset: 3px; } .ds-btn-ghost__arrow { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: rgba(255,255,255,0.12); font-size: 0.75rem; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Taxonomy pill for tags without a second accent.",
+      "html": "<span class=\"ds-chip\">Workflow Audit</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid rgba(242,240,232,0.12); color: rgba(242,240,232,0.72); font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; }"
+    },
+    {
+      "name": "Panel Card",
+      "kind": "card",
+      "refersTo": "card-panel",
+      "description": "Tonal panel with hairline border; no shadow.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-card__kicker\">Case Study</p><h3 class=\"ds-card__title\">Neurasix</h3><p class=\"ds-card__body\">Full AI stack and product ownership for BFSI workflows.</p></article>",
+      "css": ".ds-card { background: #0e1116; color: #ffffff; border: 1px solid rgba(242,240,232,0.12); border-radius: 1.5rem; padding: 1.25rem; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; } .ds-card__kicker { margin: 0 0 0.5rem; color: rgba(200,196,186,0.64); font-size: 0.75rem; font-weight: 500; } .ds-card__title { margin: 0 0 0.5rem; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; } .ds-card__body { margin: 0; color: rgba(242,240,232,0.72); font-size: 1rem; line-height: 1.55; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Product-form field on void with Shiva focus ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Work email</span><input class=\"ds-field__input\" type=\"email\" placeholder=\"you@company.com\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.5rem; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; color: #ffffff; } .ds-field__label { font-size: 0.8125rem; font-weight: 500; color: rgba(242,240,232,0.72); } .ds-field__input { min-height: 2.75rem; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid rgba(242,240,232,0.12); background: #0e1116; color: #ffffff; font: inherit; } .ds-field__input::placeholder { color: rgba(200,196,186,0.64); } .ds-field__input:focus-visible { outline: none; border-color: #3b7ddd; box-shadow: 0 0 0 3px rgba(59,125,221,0.25); }"
+    },
+    {
+      "name": "Nav CTA",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Quiet text links with one ash pill action.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a class=\"ds-nav__link\" href=\"#\">About us</a><a class=\"ds-nav__link\" href=\"#\">Case Studies</a><a class=\"ds-nav__cta\" href=\"#\">Book a free call</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 1.25rem; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; } .ds-nav__link { color: #ffffff; text-decoration: none; font-size: 0.875rem; } .ds-nav__link:hover { color: rgba(242,240,232,0.72); } .ds-nav__link:focus-visible { outline: 2px solid #3b7ddd; outline-offset: 3px; } .ds-nav__cta { display: inline-flex; align-items: center; min-height: 2.625rem; padding: 0.75rem 1.15rem; border-radius: 999px; background: #f2f0e8; color: #060606; text-decoration: none; font-size: 0.8125rem; font-weight: 500; } .ds-nav__cta:hover { background: #e8e8e8; }"
+    },
+    {
+      "name": "Tripundra Mark",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Sacred three-band mark — white · ash · Shiva blue on void.",
+      "html": "<svg class=\"ds-mark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"32\" height=\"32\" role=\"img\" aria-label=\"Trilolabs\"><rect width=\"32\" height=\"32\" rx=\"7\" fill=\"#060606\"/><rect x=\"4\" y=\"8\" width=\"24\" height=\"2.5\" fill=\"#f2f0e8\"/><rect x=\"6\" y=\"14.75\" width=\"20\" height=\"2.5\" fill=\"#c8c4ba\"/><rect x=\"8\" y=\"21.5\" width=\"16\" height=\"2.5\" fill=\"#0047ab\"/></svg>",
+      "css": ".ds-mark { display: block; border-radius: 7px; }"
+    },
+    {
+      "name": "Section Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Quiet section kicker with tripundra mark.",
+      "html": "<p class=\"ds-badge\"><svg class=\"ds-badge__mark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"14\" height=\"14\" aria-hidden=\"true\"><rect width=\"32\" height=\"32\" rx=\"7\" fill=\"#060606\"/><rect x=\"4\" y=\"8\" width=\"24\" height=\"2.5\" fill=\"#f2f0e8\"/><rect x=\"6\" y=\"14.75\" width=\"20\" height=\"2.5\" fill=\"#c8c4ba\"/><rect x=\"8\" y=\"21.5\" width=\"16\" height=\"2.5\" fill=\"#0047ab\"/></svg>Services</p>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 0.45rem; margin: 0; padding: 0.35rem 0.7rem; border-radius: 999px; border: 1px solid rgba(242,240,232,0.12); color: #ffffff; font-family: Manrope, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; } .ds-badge__mark { flex: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Tripundra Clarity",
+    "overview": "Trilolabs products share one visual doctrine: the tripundra — three horizontal bands of white, vibhuti ash, and Shiva blue — on a near-black void. The mark is not decoration; it is the hierarchy of the system. White for clarity, ash for restraint, blue for decisive focus. Everything else recedes into void so the work (and the founder’s next action) stays obvious.\n\nThis language applies to the marketing site and to internal products, client builds we own, and subproducts. Density and chrome may tighten for Operate surfaces, but palette, type family, mark geometry, pill CTAs, and flat tonal depth do not fork into a second brand.\n\nReject agency purple glow, cream-serif terracotta, newspaper grids, neon gradients, and glossy AI startup chrome.",
+    "keyCharacteristics": [
+      "Void ground (#060606) with ash-white ink and a single blue accent",
+      "One geometric sans (Manrope) for display and body",
+      "Soft pill CTAs; rounded media panels; hairline borders instead of shadows",
+      "Tripundra mark as the only sacred emblem",
+      "Flat-by-default depth; motion is purposeful and short"
+    ],
+    "rules": [
+      {
+        "name": "The Tripundra Rule",
+        "body": "Only white · ash · Shiva blue as chromatic identity. Do not introduce purple, teal-neon, gold, or warm-cream systems alongside this brand.",
+        "section": "colors"
+      },
+      {
+        "name": "The Blue Rarity Rule",
+        "body": "Shiva blue occupies a small fraction of any screen. Large fields stay void or ash-bright CTAs; blue marks focus, not wallpaper.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Manrope (or an approved geometric successor applied globally) for all UI. Do not mix Inter/Roboto/system-default stacks as the face of the product.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces rest flat. Motion and border/contrast shifts carry state; shadows are not part of the brand grammar.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do start from void (#060606) and the tripundra palette for any new Trilolabs product.",
+      "Do keep Manrope (or the global successor) as the single type family.",
+      "Do use ash-bright pill buttons for the primary action; keep blue rare.",
+      "Do express depth with tonal steps and hairlines.",
+      "Do show the legal entity where merchant/compliance surfaces require it.",
+      "Do tighten density for Operate UIs without inventing a second palette."
+    ],
+    "donts": [
+      "Don't introduce purple-indigo gradients, cream+terracotta, or broadsheet newspaper layouts.",
+      "Don't use multi-layer shadows, neon glow, or glassmorphism stacks as identity.",
+      "Don't put competing hero headlines above the brand on marketing surfaces.",
+      "Don't fabricate metrics, testimonials, or team theater as visual filler.",
+      "Don't fork a “product theme” that drops ash/blue/void for a trendy SaaS skin.",
+      "Don't resize or recolor tripundra bands independently of the mark system."
+    ]
+  }
+}

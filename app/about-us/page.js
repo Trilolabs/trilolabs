@@ -7,6 +7,7 @@ import { ABOUT_PAGE } from "../content";
 export const metadata = {
   title: "About us",
   description: ABOUT_PAGE.whoWeAre.body,
+  alternates: { canonical: "/about-us" },
 };
 
 export default function AboutUsPage() {

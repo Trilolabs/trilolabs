@@ -2,9 +2,10 @@ import Script from "next/script";
 import Chrome from "./components/Chrome";
 import Experience from "./components/Experience";
 import { COMPANY } from "./content";
+import { SITE_URL } from "./site";
 import "./globals.css";
 
-const siteUrl = "https://trilolabs.com";
+const siteUrl = SITE_URL;
 const logoUrl = `${siteUrl}/brand/logo.svg`;
 const GA_MEASUREMENT_ID = "G-XXCWS4289R";
 
@@ -26,7 +27,17 @@ export const metadata = {
     "SaaS development",
     "product engineering",
   ],
-  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -107,9 +118,9 @@ export default function RootLayout({ children }) {
       <body>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

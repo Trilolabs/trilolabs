@@ -8,6 +8,10 @@ import SiteFooter from "./components/sections/SiteFooter";
 import Work from "./components/sections/Work";
 import Why from "./components/sections/Why";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Page() {
   return (
     <main id="main">

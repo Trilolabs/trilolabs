@@ -74,7 +74,14 @@ export default function Services() {
                 <div className="service-acc__body">
                   <div className="service-acc__media" aria-hidden="true">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.image} alt="" />
+                    <img
+                      src={item.image}
+                      alt=""
+                      width={960}
+                      height={640}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="service-acc__copy">
                     <p>{item.body}</p>
